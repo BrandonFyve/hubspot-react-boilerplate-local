@@ -1,6 +1,7 @@
 # HubSpot React Boilerplate with local dev support
 
-A boilerplate for React development of HubSpot modules, with local development/hot reloading supported via Webpack serve.
+A boilerplate for React development of HubSpot modules, with local development/hot reloading supported via Webpack serve. 
+***This is an addon to the HubSpot cms-react-boilerplate repo. Credit for original boilerplate code goes to HubSpot: [Original repo](https://github.com/HubSpot/cms-react-boilerplate)***
 
 ## Getting started:
 
