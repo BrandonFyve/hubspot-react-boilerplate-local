@@ -4,12 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 
-
 const hubspotConfig = ({ portal, autoupload } = {}) => {
   return {
     target: 'web',
     entry: {
-      'main': './src/index.js'
+      main: './src/index.js',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -35,8 +34,10 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: () => [autoprefixer()]
-              }
+                postcssOptions: {
+                  plugins: [() => [autoprefixer()]],
+                },
+              },
             },
             'sass-loader',
           ],
@@ -61,13 +62,15 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
       new MiniCssExtractPlugin({
         filename: '[name].css',
       }),
-      new CopyWebpackPlugin([
-        { from: 'src/images', to: 'images' },
-        {
-          from: 'src/modules',
-          to: 'modules',
-        },
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: 'src/images', to: 'images' },
+          {
+            from: 'src/modules',
+            to: 'modules',
+          },
+        ],
+      }),
     ],
   };
 };

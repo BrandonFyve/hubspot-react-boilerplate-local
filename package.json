@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch --env.autoupload --mode production",
+    "start": "webpack --watch --env autoupload --mode production",
     "build": "rm -Rf dist && webpack --mode production",
     "deploy": "rm -Rf dist && webpack --mode production && hs upload dist cms-react-boilerplate",
     "lint": "eslint src && prettier --list-different 'src/**/*.js' 'src/**/*.json'",

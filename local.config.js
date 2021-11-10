@@ -77,9 +77,6 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
         ],
       }),
       new HtmlWebpackPlugin({
-        // hash: true,
-        // title: 'My Awesome application',
-        // myPageHeader: 'Hello World',
         template: './src/template/index.html',
         filename: './index.html', //relative to root of the application
       }),
